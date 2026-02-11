@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+/* NAV */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+/* HERO */
+.hero {
+  padding: 4rem;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  margin: 1rem 0 2rem 0;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+/* SECTIONS */
+.portfolio-section,
+.contact-section {
+  padding: 5rem 4rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.photo {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.photo img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.photo img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT */
+.contact-box p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-box a {
+  color: #111;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3rem;
+  color: #777;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+  z-index: 999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* An imacion revel */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-image {
+    order: 2;
+  }
+}
