@@ -12,6 +12,7 @@ body {
   font-family: "Manrope", sans-serif;
   background: #ffffff;
   color: #111;
+  animation: pageFade 0.8s ease forwards;
 }
 
 /* NAV */
@@ -20,6 +21,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 4rem;
+  transform: translateY(-15px);
+  animation: navFade 0.8s ease 0.3s forwards;
 }
 
 .brand {
@@ -58,6 +61,8 @@ body {
 
 .hero-image {
   height: 60vh;
+  transform: scale(1.03);
+  animation: imageFade 1.2s ease 0.4s forwards;
 }
 
 .hero-image img {
@@ -65,6 +70,12 @@ body {
   height: 100%;
   object-fit: contain;
   border-radius: 0;
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 1s ease 0.6s forwards;
 }
 
 .hero-content h2 {
@@ -105,7 +116,7 @@ body {
 .section-title {
   font-size: 2rem;
   text-align: center;
-  margin: 4rem 0 2rem 0;
+  margin: 4rem 0 0.5rem 0;
 }
 
 .photos {
@@ -210,5 +221,113 @@ footer {
 
   .hero-image {
     order: 2;
+  }
+}
+
+/* Keyframes */
+
+@keyframes pageFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageFade {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1.5rem;
+  }
+
+  /* NAV */
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .hero-content p {
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-image {
+    height: 40vh;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* PHOTOS */
+  .photos-box {
+    padding: 0.5rem;
+  }
+
+  .photos-box--img {
+    height: auto;
+    width: 90vw;
+    max-width: 500px;
+  }
+
+  /* DIVISOR */
+  .divisor {
+    width: 200px;
+  }
+
+  /* CONTACT */
+  .contact-box p {
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+  }
+
+  /* LIGHTBOX CLOSE */
+  .close {
+    top: 20px;
+    right: 20px;
   }
 }
