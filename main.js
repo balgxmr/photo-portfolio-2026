@@ -3,7 +3,7 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
 const closeBtn = document.querySelector(".close");
 
-document.querySelectorAll(".photo img").forEach((img) => {
+document.querySelectorAll(".photos-box--img").forEach((img) => {
   img.addEventListener("click", () => {
     lightbox.classList.add("active");
     lightboxImg.src = img.src;
